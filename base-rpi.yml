@@ -1,0 +1,95 @@
+- name: Update Operating Systems
+  hosts: all
+  become: True
+
+  tasks:
+    - name: Update Cache Packages
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+
+    - name: Upgrade Packages
+      apt:
+        name: "*"
+        state: latest
+
+    - name: Install General Packages
+      apt:
+        name:
+          - vim
+          - pv
+          - tree
+          - speedtest-cli
+          - tmux
+          - pwgen
+          - fdupes
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - gnupg
+          - gnupg-agent
+          - lsb-release
+          - vim
+          - build-essential
+          - checkinstall
+          - make
+          - automake
+          - cmake
+          - autoconf
+          - dkms
+          - git
+          - dirmngr
+          - software-properties-common
+          - gcc
+          - g++
+          - lm-sensors
+          - ssh
+          - rsync
+          - jq
+        state: latest
+
+    - name: Compress and Uncompress
+      apt:
+        name:
+          - bzip2
+          - zip
+          - unzip
+          - p7zip
+          - p7zip-full
+          - unrar-free
+          - lzip
+          - lhasa
+          - arj
+          - sharutils
+          - mpack
+          - lzma
+          - lzop
+          - cabextract
+          - xz-utils
+        state: latest
+
+    - name: Extra Tools
+      apt:
+        name:
+          - whois
+          - bind9utils
+          - dnsutils
+          - traceroute
+          - nmap
+          - tcpdump
+          - fping
+          - masscan
+          - htop
+        state: latest
+
+    - name: DETECT AUTOMATIC SENSORS
+      shell: sensors-detect --auto
+
+    - name: Execute Autoremove
+      apt:
+        autoremove: yes
+
+  vars:
+    ansible_user: pi
+    ansible_private_key_file: ~/.ssh/ssh-cluster
+    ansible_port: 22

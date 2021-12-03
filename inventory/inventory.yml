@@ -1,0 +1,13 @@
+all:
+  hosts:
+    10.172.1.21:
+    10.172.1.22:
+    10.172.1.23:
+    10.172.1.24:
+    10.172.1.25:
+
+  vars:
+    ansible_user: "{{ debian_user }}"
+    ansible_port: "{{ debian_port }}"
+    ansible_private_key_file: "{{ debian_private_key_file }}"    
+    ansible_python_interpreter: "/usr/bin/python3"

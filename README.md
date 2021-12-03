@@ -11,3 +11,11 @@ This project supplies the necessary packages for an RPI system, among the packag
 ## Packages
 
 1. [K3s](https://rancher.com/docs/k3s/latest/en/)
+
+## Commands
+
+```bash
+$ ansible-playbook base-rpi.yml -i inventory/inventory.yml
+```
+
+The default user **pi** does not request a password, therefore it is not necessary: **--ask-become-pass**.
