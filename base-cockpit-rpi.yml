@@ -1,0 +1,12 @@
+- name: Install Cockpit RPI
+  hosts: all
+  become: True
+
+  tasks:
+    - name: Add Repo Cockpit
+      apt:
+        name:
+          - cockpit
+          - cockpit-tests
+        state: latest
+
