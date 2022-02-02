@@ -10,12 +10,12 @@ all: base-update base-packages base-cockpit
 ## Tasks
 base-update:
 	@echo "[x] Updating Operating System"
-	@ansible-playbook base-update-rpi.yml -i inventory/inventory.yml
+	@ansible-playbook base-update.yml -i inventory/inventory.yml
 
 base-packages:
 	@echo "[x] Installing Base Package"
-	@ansible-playbook base-package-rpi.yml -i inventory/inventory.yml 
+	@ansible-playbook base-package.yml -i inventory/inventory.yml 
 
 base-cockpit:
 	@echo "[x] Install and config Cockpit"
-	@ansible-playbook base-cockpit-rpi.yml -i inventory/inventory.yml 
+	@ansible-playbook base-cockpit.yml -i inventory/inventory.yml 

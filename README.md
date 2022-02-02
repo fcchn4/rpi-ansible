@@ -5,7 +5,7 @@ This project supplies the necessary packages for an RPI system, among the packag
 ## Requirements
 
 1. SSH Server Enabled
-2. SSH Private Key Associated
+2. SSH Public Key Associated
 3. Static IP on RPI
 
 ## Packages

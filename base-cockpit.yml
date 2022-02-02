@@ -10,3 +10,7 @@
           - cockpit-tests
         state: latest
 
+  vars:
+    ansible_user: pi
+    ansible_private_key_file: ~/.ssh/ssh-cluster
+    ansible_port: 22
