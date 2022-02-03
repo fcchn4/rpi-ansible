@@ -1,10 +1,14 @@
 all:
-  hosts:
-    10.172.1.21:
-    10.172.1.22:
-    10.172.1.23:
-    10.172.1.24:
-    10.172.1.25:
+  #hosts:
+  children:
+    serverk3s:
+      hosts:
+        10.172.1.21:
+    agentsk3s:
+      hosts:        
+        10.172.1.22:
+        10.172.1.23:
+        10.172.1.24:        
 
   vars:
     ansible_user: "{{ debian_user }}"

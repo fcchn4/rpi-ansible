@@ -16,6 +16,10 @@ base-packages:
 	@echo "[x] Installing Base Package"
 	@ansible-playbook base-package.yml -i inventory/inventory.yml 
 
-base-cockpit:
-	@echo "[x] Install and config Cockpit"
-	@ansible-playbook base-cockpit.yml -i inventory/inventory.yml 
+k3s-server:
+	@echo "[x] Installing K3s Server"
+	@ansible-playbook k3s-server.yml -i inventory/inventory.yml
+
+k3s-agents:
+	@echo "[x] Installing K3s Agents"
+	@ansible-playbook k3s-agents.yml -i inventory/inventory.yml

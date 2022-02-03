@@ -1,0 +1,14 @@
+- name: INSTALL K3S AGENTS
+  hosts: agentsk3s
+  become: True
+
+  tasks:
+    - name: Update Cache Packages
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+
+  vars:
+    ansible_user: pi
+    ansible_private_key_file: ~/.ssh/ssh-cluster
+    ansible_port: 22
