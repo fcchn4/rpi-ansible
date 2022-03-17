@@ -4,7 +4,7 @@ all:
     serverk3s:
       hosts:
         10.172.1.21:
-    agentsk3s:
+    workersk3s:
       hosts:        
         10.172.1.22:
         10.172.1.23:

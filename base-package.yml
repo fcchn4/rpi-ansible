@@ -1,4 +1,4 @@
-- name: Update Operating Systems
+- name: INSTALL PACKAGES BASE
   hosts: all
   become: True
 
@@ -79,3 +79,7 @@
     ansible_user: pi
     ansible_private_key_file: ~/.ssh/ssh-cluster
     ansible_port: 22
+
+# Default Raspbian User: pi
+# Default Raspbian Password: raspbian
+# Default Raspbian Config: sudoers.d NOPASSWD
